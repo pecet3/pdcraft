@@ -1,6 +1,10 @@
 import * as THREE from "three"
 import { OrbitControls } from "three/examples/jsm/Addons.js"
+import Stats from "three/examples/jsm/libs/stats.module.js"
 import { World } from "./world"
+
+const stats = new Stats()
+document.body.append(stats.dom)
 // renderer
 
 const renderer = new THREE.WebGLRenderer()
@@ -50,7 +54,7 @@ function animate() {
 
   // cube.rotation.x += 0.01
   // cube.rotation.y += 0.01
-
+  stats.update()
   renderer.render(scene, camera)
 }
 
